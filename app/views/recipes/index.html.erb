@@ -1,5 +1,5 @@
 <%= render 'shared/page_title', title: "Recipes Index" %>
-
+<%= will_paginate %>
 <hr/>
 <% @recipes.each do |recipe| %>
   <div class="row">
@@ -13,7 +13,8 @@
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= recipe.summary %></p>
       <p>
-        <span class='quiet'><small><%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+        <span class='quiet'><small>Created: <%= time_ago_in_words(recipe.created_at) %> ago, </small></span>
+        <span class='quiet'><small> updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small></span>
       </p>
       <div class="pull-right">
         <%= link_to like_recipe_path(recipe, likes: true), method: :post do %>
@@ -30,3 +31,4 @@
   </div>
   <hr/>
 <% end %>
+<%= will_paginate %>
