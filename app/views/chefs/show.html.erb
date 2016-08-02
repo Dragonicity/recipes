@@ -1,0 +1,11 @@
+<%= render 'shared/page_title', title: @chef.name %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h5><%= link_to "Edit Chef", edit_chef_path(@chef), class: "btn btn-success pull-right" %></h5>
+    <h3><%= @chef.name %></h3>
+    <h3><%= @chef.email %></h3>
+  </div>
+</div>
+
+<h5><%= link_to "Recipes", recipes_path, class: "btn btn-warning btn-small" %></h5>
