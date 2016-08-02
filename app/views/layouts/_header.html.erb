@@ -4,7 +4,12 @@
     <div class="nav-item">
       <%= link_to "link 1", "", class: "btn btn-default btn-warning" %>
       <%= link_to "link 2", "", class: "btn btn-default btn-warning" %>
+      <% if logged_in? %>
       <%= link_to "New Recipe", new_recipe_path, class: "btn btn-default btn-warning" %>
+      <%= link_to "Log out", logout_path, class: "btn btn-default btn-danger" %>
+      <% else %>
+        <%= link_to "Log in", login_path, class: "btn btn-default btn-warning" %>
+      <% end %>
     </div>
   </div>
 </nav>
